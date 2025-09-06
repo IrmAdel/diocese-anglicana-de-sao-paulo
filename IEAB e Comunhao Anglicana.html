@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IEAB e Comunhão Anglicana - DASP</title>
+  <style>
+    :root {
+      --azul: #1a365d;
+      --texto: #333;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+      height: 100%;
+      overflow-y: auto;
+      background: url('https://static.nationalgeographicbrasil.com/files/styles/image_3200/public/skyline-sao-paulo-brazil.webp?w=1600&h=900') no-repeat center center fixed;
+      background-size: cover;
+    }
+
+    /* Cabeçalho fixo */
+    header {
+      background-color: white;
+      border-bottom: 1px solid #ddd;
+      padding: 15px 40px;
+      display: flex;
+      justify-content: center;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 10;
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      gap: 25px;
+    }
+
+    nav ul li {
+      position: relative;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: var(--azul);
+      font-weight: 500;
+      font-size: 14px;
+      padding: 5px 0;
+      display: block;
+    }
+
+    /* Dropdown */
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: white;
+      min-width: 200px;
+      box-shadow: 0px 4px 6px rgba(0,0,0,0.1);
+      border-radius: 5px;
+      z-index: 20;
+      flex-direction: column;
+      padding: 10px 0;
+    }
+
+    .dropdown-content a {
+      display: block;
+      padding: 8px 15px;
+      color: var(--azul);
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #f0f0f0;
+    }
+
+    .dropdown:hover .dropdown-content,
+    .dropdown-content:hover {
+      display: flex;
+    }
+
+    /* Overlay */
+    .overlay {
+      background-color: rgba(255,255,255,0.85);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      padding: 120px 20px 40px;
+    }
+
+    /* Card */
+    .card {
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+      max-width: 900px;
+      width: 100%;
+      padding: 30px;
+      text-align: center;
+    }
+
+    .card-text {
+      text-align: justify;
+      color: #555;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    .card-text strong {
+      font-weight: bold;
+    }
+
+    .card-text em {
+      font-style: italic;
+    }
+
+    .card-text h2 {
+      color: var(--azul);
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Cabeçalho fixo -->
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Início</a></li>
+        <li class="dropdown">
+          <a href="#">A Diocese</a>
+          <div class="dropdown-content">
+            <a href="historia da diocese.html">História da Diocese</a>
+            <a href="mensagem do bispo.html">Mensagem do Bispo</a>
+            <a href="brasao episcopal.html">Brasão Episcopal</a>
+            <a href="galeria dos bispos.html">Galeria dos Bispos</a>
+          </div>
+        </li>
+        <li><a href="IEAB e Comunhao Anglicana.html">IEAB / Comunhão Anglicana</a></li>
+        <li><a href="#">Nossas Paróquias</a></li>
+        <li><a href="#">Sodalícios e Pastorais</a></li>
+        <li><a href="#">Links</a></li>
+        <li><a href="#">Publicações e Notícias</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Conteúdo -->
+  <div class="overlay">
+    <div class="card">
+      <!-- Texto -->
+      <div class="card-text">
+        <p><em>“A Comunhão Anglicana é apenas uma parte da Igreja Católica (...) simplesmente a fé católica e apostólica – incorporada nas Escrituras, nos credos, nos sacramentos e no ministério apostólico de bispos, sacerdotes e diáconos. Um ministério católico – um vínculo de continuidade e unidade ao longo dos tempos e em todo o mundo (...), e servindo a Cristo lealmente nesta Comunhão onde Ele providencialmente nos colocou, nos aproximamos de ambos os lados na busca da unidade, esforçando-nos para construir a unidade da única Igreja Católica”.</em></p>
+
+        <p style="text-align: right;"><strong>Arcebispo Michael Ramsey (1904 – 1988)</strong></p>
+
+        <h2>O Anglicanismo no Brasil</h2>
+        <p>O cristianismo chegou às ilhas britânicas no final do primeiro século, levado por cristãos que fugiam das perseguições. Ali, a Igreja Cristã foi estabelecida inicialmente entre os celtas que enviaram três bispos ao Concílio de Arles, em 314 d.C. Em 596, o bispo de Roma, São Gregório Magno, enviou missionários para evangelizar o sudeste da Grã-Bretanha, região conhecida por Kent, onde habitavam os anglo-saxões. Essa missão foi liderada pelo Bispo Agostinho, que estabeleceu em Cantuária as primeiras comunidades subordinadas ao bispo de Roma.</p>
+        <p>A partir de então houve um gradativo processo de avanço da Igreja de Roma nos territórios celtas até que em 664 a Igreja Celta submeteu-se ao governo da Igreja Romana, adotando parcialmente seus ritos, mas mantendo diversas tradições celtas e britânicas. O povo britânico, porém, nunca concordou com a submissão ao poder romano. Assim, em 1534, a Igreja Anglicana voltou a separar-se da Igreja Romana por decisão do Parlamento após iniciativa do Rei Henrique VIII.</p>
+        <p>O anglicanismo deixou-se influenciar positivamente pelo movimento da Reforma, sem deixar de preservar as mais puras e sadias tradições católicas antigas, expressas na liturgia contida no Livro de Oração Comum.</p>
+        <p>No Brasil o anglicanismo chegou em duas etapas no século XIX: através dos imigrantes ingleses que aqui se estabeleceram a partir de 1810 e através do trabalho de missionários norte-americanos a partir de 1889. Há aproximadamente 80 milhões de membros na Comunhão Anglicana, espalhados nas 41 províncias autônomas  em 165 diferentes países.</p>
+        <p>A Igreja Episcopal Anglicana do Brasil é a 19ª Província da Comunhão Anglicana, em plena comunhão com a Sé de Cantuária. Somos a única Igreja Anglicana reconhecida pela Comunhão Anglicana.</p>
+
+        <h2>Somos um segmento do povo de Deus</h2>
+        <p>"Esse povo que somos se identifica pela sua história, pela sua mensagem, fé, esperança e organização em relação ao mundo."  (Bispo Sumio Takatsu)</p>
+        <p>Geralmente ao sermos questionados sobre “quem somos”, a primeira resposta é que somos um segmento do povo de Deus. Não nos consideramos “o” povo único de Deus. Deus revelado em Jesus Cristo no poder do Espírito Santo tem o seu povo e somos um segmento desse povo espalhado pelo mundo de Deus.</p>
+        <p>Na dimensão histórica, somos segmento daquele povo que surgiu como o povo da nova Criação e novo Israel, em continuidade com o povo do Antigo Testamento, em virtude da ressurreição de Jesus Cristo.</p>
+        <p>Este povo, a Igreja, foi às ilhas britânicas. Na época da Reforma, adotou seus princípios básicos, sem abandonar o senso da continuidade. Tanto assim que a Comunhão que se denomina de anglicana tem afirmado que ela é católica e reformada. Tanto assim que a Comunhão Anglicana sempre afirmou que ela é católica e reformada.</p>
+        <p>No Livro de Oração Comum que se encontra o padrão de ensino, de mensagem, de culto, de organização e disciplina. A liturgia abarca todas essas dimensões da Igreja. A própria palavra liturgia indica a presença desses elementos, pois “liturgia” significa a ação do povo. Na verdade, na liturgia o povo se reúne para a ação, a qual consistem na celebração dos atos de Deus para a salvação da humanidade.</p>
+
+        <h2>Ensino da Igreja inspirado nas Escrituras</h2>
+​        <h3>O Livro de Oração Comum - L.O.C.</h3>
+        <p>“A consideração da liturgia anglicana é a consideração de nós mesmos. Trata-se de quem somos numa dimensão mais ampla no espaço e no tempo”. (Bispo Sumio Takatsu)</p>
+        <p>As orações da Igreja sempre foram oferecidas a Deus por um livro, desde os tempos primitivos. A Comunhão Anglicana não fez outra coisa senão seguir a antiga prática. Foi precisamente na manhã do domingo  9 de junho de 1549, que os ingleses acompanharam em suas igrejas, pela primeira vez os ofícios religiosos na sua própria língua. O livro inglês não era um livro novo, mas o produto reformado de antigas liturgias usadas e desenvolvidas ao longo de um milênio.</p>
+        <p>Hoje, séculos depois, nós ainda temos em nossas mãos, como eles o tiveram nas suas naquele dia, o Livro de Oração Comum. É ele a maior riqueza da Igreja Anglicana por todo o mundo como é, também, o inquebrantável elo que as une e a garantia de continuidade na fé e no culto da Santa Igreja Católica de Cristo.</p>
+
+        <h2>Princípios Essenciais do Anglicanismo</h2>
+​        <h3>A fé católica e apostólica​</h3>
+        <p>Fé, a Ordem e a Prática estão expressas no Livro de Oração Comum, nos Ordinais dos séculos XVI e XVII e mais resumidamente no Quadrilátero de Lambeth de 1888. Este documento definiu como elementos essenciais de Fé e Ordem para a busca da unidade cristã:</p>
+        <p>ㅤㅤㅤㅤㅤㅤㅤㅤ1) As Santas Escrituras do Antigo e Novo Testamento como a Palavra revelada por Deus;</p>
+        <p>ㅤㅤㅤㅤㅤㅤㅤㅤ2) O Credo Niceno e o Credo Apostólico, como a declaração suficiente da fé cristã;</p>
+        <p>ㅤㅤㅤㅤㅤㅤㅤㅤ3) Os sacramentos do Batismo e da Eucaristia celebrados com as palavras e os elementos usados por Jesus Cristo na última ceia;</p>
+        <p>ㅤㅤㅤㅤㅤㅤㅤㅤ4) O Episcopado Histórico, como símbolo da unidade Cristã.</p>
+
+        <p>A adoração está no centro do anglicanismo. Os estilos variam do simples para o elaborado, do evangélico para o católico e do carismático para o tradicional. O ponto central da adoração, para os anglicanos é a Celebração da Santa Eucaristia, que é chamada também de Santa Comunhão, Santa Ceia, Ceia do Senhor ou Santa Missa. No oferecimento da oração e do louvor são relembradas a vida, a morte, ressurreição e ascensão de Cristo por meio da proclamação da Palavra e da celebração do sacramento.</p>
+
+​        <h3>Bíblia Sagrada​</h3>
+        <p>A Comunhão Anglicana tem na Bíblia a principal fonte de doutrina, tofa via as Escrituras Sagradas são aceitas, a um só tempo, como Palavra de Deus e Produção Histórica e cultural do povo de Israel e da igreja primitiva, isso possibilita o espaço necessário à leitura crítica adequada à luz da tradição da Igreja, do estudo e da razão.</p>
+        <p>A tradição cristã abrange muito mais do que a Bíblia. Nela se inclui a valiosa contribuição dos grandes santos e pensadores cristãos, a liturgia, o tesouro devocional acumulado durante séculos e as implicações morais da fé cristã na vida diária.</p>
+        <p>A Comunhão Anglicana acredita que as Sagradas Escrituras contém toda a doutrina necessária para a salvação e nada que nelas não possa ser lido ou provado por elas pode ser tido como artigo de fé ou necessário para a salvação. Acreditamos que as Sagradas Escrituras contêm toda revelação necessária para que a humanidade alcance vida plena. Toda nossa doutrina e liturgia sustentam-se na Bíblia Sagrada.</p>
+
+​        <h3>Os Credos Apostólicos e Niceno</h3>
+        <p>Escritos no tempo da igreja indivisa, constituem a confissão normativa da fé católica que preservamos ainda hoje.</p>
+
+​        <h3>Os Sacramentos</h3>
+        <p>A Igreja Anglicana é uma igreja sacramental. Professamos o Santo Batismo e a Santa Eucaristia como legítimos sacramentos diretamente ordenados por Cristo e instrumentos da graça salvífica de Deus.</p>
+
+​        <h3>O Santo Batismo</h3>
+        <p>A filiação à Igreja se dá pelo batismo, que é o sacramento da iniciação cristã, o ato de ingresso na comunidade eclesial. O sinal externo do batismo é o derramamento da água ou imersão em nome da Santíssima Trindade (Pai, Filho e Espírito Santo) e a graça interna e espiritual é a nova vida ou a morte para o pecado e a ressurreição dos mortos. O batismo é o nascimento para a vida eterna, que começa na vida terrena.</p>
+        <p>Pessoas de qualquer idade podem ser batizadas, desde que não tenham ainda sido batizadas. A Igreja Episcopal Anglicana do Brasil (IEAB) pratica o batismo infantil, como fazia a Igreja primitiva, embora os primeiros convertidos ao Cristianismo fossem adultos. A Igreja é a família de Deus e, como acontece na família terrena, os pais cuidam dos filhos até que adquiram a maioridade para assumirem a sua própria responsabilidade. A Igreja Episcopal reconhece como válido qualquer batismo com água, administrado em nome da Santíssima Trindade. Não pratica o rebatismo. Em caso de dúvida, a liturgia do batismo possui uma fórmula para o batismo condicional. Qualquer pessoa batizada pode participar da Santa Eucaristia e receber regularmente os elementos da santa comunhão, se para isso se julgar digna diante de Deus.</p>
+        <p>Na Igreja primitiva, a vida cristã era muito difícil e incerta. Havia a possibilidade da criança batizada ficar aos cuidados de uma família pagã. Seguindo o antigo costume, a IEAB faz uso do costume de adotar padrinhos. Os deveres dos padrinhos são grandes e importantes e fazem parte da administração do santo batismo. Por isso, exige que os padrinhos sejam também batizados, ou que, pelo menos, recebam alguma instrução sobre os deveres e responsabilidades que assumiram, e expressem a vontade de cumpri-los fielmente.</p>
+
+        <h3>A Santa Eucaristia</h3>
+        <p>A Santa Eucaristia, também chamada de Santa Ceia, Santa Comunhão ou Santa Missa, é o alimento espiritual por excelência dos cristãos e o principal ato de adoração pública da comunidade local. Os sinais externos e visíveis do sacramento da Eucaristia são o pão e o vinho consagrados pelo sacerdote. A graça interna e espiritual é o corpo e sangue de Cristo.</p>
+        <p>Na última ceia com os discípulos, Jesus disse que toda a vez que comermos deste pão e bebermos deste vinho, estamos fazendo isso em sua memória. A palavra que traduzimos por memória vem do grego anamnesis, que significa muito mais do que simplesmente lembrar ou recordar: significa estar presente.</p>
+        <p>A Igreja Episcopal Anglicana do Brasil (IEAB) não procura explicar teologicamente como se dá a presença real de Cristo na Eucaristia. Esse santo sacramento é um profundo mistério (e todo mistério é inexplicável), que reúne milhões de cristãos todos os domingos há dois mil anos, para participar deste pão e deste vinho em comunhão com Deus, com Jesus e com todos os cristãos de todos os tempos e em todos os lugares.</p>
+
+        <h3>O Episcopado histórico</h3>
+        <p>Professamos que a autoridade transmitida por Cristo aos apóstolos e esses aos seus sucessores (incluindo nossos bispos) é, ao mesmo tempo, garantia e expressão da catolicidade e apostolicidade da Igreja.</p>
+
+        <h2>Ser anglicano significa</h2>
+        <p> …Ser parte da Igreja Católica de Cristo, sem excluir ou isolar-se de outros cristãos. Participar da vida do povo de Deus, com suas alegrias e tristezas. Pertencer a uma comunidade onde cada pessoa é respeitada em sua individualidade e pode utilizar os seus talentos. Apresentar uma teologia baseada nas Escrituras Sagradas e na Tradição, coerente com a inteligência e com a razão. Estar disposto a celebrar a unidade na diversidade. Considerar com seriedade as Escrituras Sagradas, sem crer que cada passagem deva ser interpretada literalmente.</p>
+        <p> …Preferir a liberdade em Cristo, mais do que a uniformidade de opiniões.</p>
+        <p> …Sentir devoção e reverência pelos Sacramentos, sem tentar definir cada ponto desses grandes mistérios. Conceber o ministério, como dever e privilégio de todos os batizados. Insistir na moralidade (aquilo que é bom e edifica) e evitar o moralismo (que define a salvação decorrente de uma conduta e não pela obra de Cristo). Participar da herança apostólica, a fé no Evangelho de Cristo. Ser parte de uma história antiga e sagrada, que se renova a cada dia. Crer que a Igreja é de todos e que todos têm o privilégio de sustentá-la segundo a possibilidade de cada um.</p>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
