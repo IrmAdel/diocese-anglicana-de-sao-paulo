@@ -97,6 +97,29 @@
       main h2 {
         font-size: 24px;
       }
+
+    /* Para celulares (telas até 768px de largura) */
+@media (max-width: 768px) {
+  body {
+    font-size: 16px;
+  }
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+/* Para desktops (telas acima de 1024px) */
+@media (min-width: 1024px) {
+  body {
+    font-size: 18px;
+  }
+  nav ul {
+    flex-direction: row;
+    gap: 25px;
+  }
+}
+
     }
   </style>
 </head>
@@ -205,4 +228,5 @@
 
 </body>
 </html>
+
 
