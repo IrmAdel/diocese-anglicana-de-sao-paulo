@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mensagem do Bispo - DASP</title>
+  <style>
+    :root {
+      --azul: #1a365d;
+      --texto: #333;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+  height: 100%;
+  overflow: auto; /* ATIVAR rolagem */
+  background: url('https://static.nationalgeographicbrasil.com/files/styles/image_3200/public/skyline-sao-paulo-brazil.webp?w=1600&h=900') no-repeat center center fixed;
+  background-size: cover;
+}
+
+    /* Cabeçalho fixo com faixa sólida */
+    header {
+      background-color: white;
+      border-bottom: 1px solid #ddd;
+      padding: 15px 40px;
+      display: flex;
+      justify-content: center;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 10;
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      gap: 25px;
+    }
+
+    nav ul li {
+      position: relative;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: var(--azul);
+      font-weight: 500;
+      font-size: 14px;
+      padding: 5px 0;
+      display: block;
+    }
+
+    /* Dropdown menu */
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: white;
+      min-width: 200px;
+      box-shadow: 0px 4px 6px rgba(0,0,0,0.1);
+      border-radius: 5px;
+      z-index: 20;
+      flex-direction: column;
+      padding: 10px 0;
+    }
+
+    .dropdown-content a {
+      display: block;
+      padding: 8px 15px;
+      color: var(--azul);
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #f0f0f0;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: flex;
+    }
+
+    /* Overlay para card centralizado */
+    .overlay {
+      background-color: rgba(255,255,255,0.85);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 100px 20px 40px;
+    }
+
+    /* Card */
+    .card {
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+      max-width: 900px;
+      width: 100%;
+      padding: 30px;
+      text-align: center;
+    }
+
+    /* Foto do bispo */
+    .card img {
+      height: 200px;
+      width: 200px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 20px;
+    }
+
+    .card-text {
+      text-align: justify;
+      color: #555;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 768px) {
+      .card img {
+        height: 150px;
+        width: 150px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Cabeçalho fixo -->
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Início</a></li>
+
+        <li class="dropdown">
+          <a href="#">A Diocese</a>
+          <div class="dropdown-content">
+            <a href="historia da diocese.html">História da Diocese</a>
+            <a href="mensagem do bispo.html">Mensagem do Bispo</a>
+            <a href="brasao episcopal.html">Brasão Episcopal</a>
+            <a href="galeria dos bispos.html">Galeria dos Bispos</a>
+          </div>
+        </li>
+
+        <li><a href="#">IEAB / Comunhão Anglicana</a></li>
+        <li><a href="#">Nossas Paróquias</a></li>
+        <li><a href="#">Sodalícios e Pastorais</a></li>
+        <li><a href="#">Links</a></li>
+        <li><a href="#">Publicações e Notícias</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Conteúdo principal centralizado -->
+  <div class="overlay">
+    <div class="card">
+      <img src="https://static.wixstatic.com/media/aea484_a7ccdd400b17498fab5b4471b5cf444d~mv2.jpeg/v1/fill/w_266,h_266,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/fotoBispo.jpeg" alt="Foto do Bispo">
+      <div class="card-text">
+        <p>
+          Prezados(a) visitantes, paz e bem!
+        </p>
+        <p>
+          Com grata satisfação damos as Boas-vindas à página da Diocese Anglicana de São Paulo (DASP). Fico muito feliz que você esteja visitando digitalmente a nossa Diocese.
+        </p>
+        <p>
+          Aqui, você encontrará informações básicas sobre nossa Diocese e links importantes da Igreja Episcopal Anglicana do Brasil (IEAB) e da Comunhão Anglicana. Criada pelo Sínodo Geral da IEAB em 1969, a Diocese Anglicana de São Paulo é uma diocese muito jovem. Somos uma das nove dioceses que constituem a Igreja Episcopal Anglicana do Brasil, – 19° Província da Comunhão Anglicana, em plena e permanente Comunhão com a Sé histórica de Cantuária.
+        </p>
+        <p>
+          Somos uma Igreja Católica, que recebeu as influências benéficas da Reforma do século XVI; tornando-se ao mesmo tempo, católica reformada, e aberta a todas as pessoas. Nas palavras do Arcebispo Michael Ramsey: “A Comunhão Anglicana é apenas uma parte da Igreja Católica (...) simplesmente a fé primitiva, católica e apostólica - incorporada nas Escrituras, nos credos, nos sacramentos e no ministério apostólico de bispos, sacerdotes e diáconos. Um ministério católico - um vínculo de continuidade e unidade ao longo dos tempos e em todo o mundo (...), e servindo a Cristo lealmente nesta Comunhão onde Ele providencialmente nos colocou, nos aproximamos de ambos os lados na busca da unidade, esforçando-nos para construir a unidade da única Igreja Católica.“
+        </p>
+        <p>
+          Nos diversos itens do menu deste site, você encontrará mais informações, através das quais poderá conhecer nossas doutrinas e elementos do Ethos Anglicano. Estamos no Brasil, para servir e proclamar as Boas novas do Evangelho de nosso Senhor Jesus Cristo.
+        </p>
+        <p>
+          Mais uma vez, seja muito bem-vinda(o) entre nós.
+        </p>
+        <p>
+          + Cézar Fernandes Alves
+        </p>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

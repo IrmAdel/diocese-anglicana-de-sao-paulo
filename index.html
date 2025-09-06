@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diocese Anglicana de São Paulo</title>
+  <style>
+    :root {
+      --azul: #1a365d;
+      --texto: #333;
+    }
+    * {
+      box-sizing: border-box;
+    }
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+      height: 100%;
+      overflow: hidden; /* desativa rolagem */
+      background: url('https://static.nationalgeographicbrasil.com/files/styles/image_3200/public/skyline-sao-paulo-brazil.webp?w=1600&h=900') no-repeat center center fixed;
+      background-size: cover;
+    }
+
+    /* Cabeçalho fixo com faixa sólida */
+    header {
+      background-color: white; /* faixa sólida */
+      border-bottom: 1px solid #ddd;
+      padding: 15px 40px;
+      display: flex;
+      justify-content: center;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 10;
+    }
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      gap: 25px;
+    }
+    nav ul li a {
+      text-decoration: none;
+      color: var(--azul);
+      font-weight: 500;
+      font-size: 14px;
+      transition: color 0.2s ease-in-out;
+    }
+    nav ul li a:hover {
+      color: #0a58ca;
+    }
+
+    /* Overlay branco semitransparente ocupando toda a tela */
+    .overlay {
+      background-color: rgba(255,255,255,0.85);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start; /* alinha conteúdo ao topo */
+      padding: 60px 20px 40px; /* ajustado para subir o conteúdo */
+      text-align: center;
+    }
+
+    /* Conteúdo principal */
+    main img {
+      height: 260px; /* um pouco maior e mais destacado */
+      width: auto;
+      margin-bottom: 15px; /* mantém espaço entre logo e título */
+    }
+    main h2 {
+      font-size: 32px;
+      color: var(--azul);
+      margin-bottom: 10px; /* aproxima do parágrafo */
+    }
+    main p {
+      max-width: 650px;
+      font-size: 16px;
+      line-height: 1.6;
+      color: #555;
+      margin: 0 auto;
+    }
+
+    /* Rodapé dentro da mesma tela */
+    footer {
+      color: #555;
+      font-size: 14px;
+      margin-top: 30px;
+    }
+
+    @media (max-width: 768px) {
+      main img {
+        height: 180px;
+      }
+      main h2 {
+        font-size: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Cabeçalho fixo -->
+ <header>
+  <nav>
+    <ul>
+      <li><a href="index.html">Início</a></li>
+
+      <!-- Dropdown -->
+      <li class="dropdown">
+        <a href="#">A Diocese</a>
+        <div class="dropdown-content">
+          <a href="historia da diocese.html">História da Diocese</a>
+          <a href="mensagem do bispo.html">Mensagem do Bispo</a>
+          <a href="brasao episcopal.html">Brasão Episcopal</a>
+          <a href="galeria dos bispos.html">Galeria dos Bispos</a>
+        </div>
+      </li>
+
+      <li><a href="#">IEAB / Comunhão Anglicana</a></li>
+      <li><a href="#">Nossas Paróquias</a></li>
+      <li><a href="#">Sodalícios e Pastorais</a></li>
+      <li><a href="#">Links</a></li>
+      <li><a href="#">Publicações e Notícias</a></li>
+    </ul>
+  </nav>
+</header>
+
+<style>
+  :root {
+    --azul: #1a365d;
+  }
+
+  nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 25px;
+  }
+
+  nav ul li {
+    position: relative; /* necessário para o dropdown */
+  }
+
+  nav ul li a {
+    text-decoration: none;
+    color: var(--azul);
+    font-weight: 500;
+    font-size: 14px;
+    padding: 5px 0;
+    display: block;
+  }
+
+  .dropdown-content {
+    display: none; /* começa escondido */
+    position: absolute;
+    top: 100%; /* abaixo do link */
+    left: 0;
+    background-color: white;
+    min-width: 200px;
+    box-shadow: 0px 4px 6px rgba(0,0,0,0.1);
+    border-radius: 5px;
+    z-index: 20;
+    flex-direction: column;
+    padding: 10px 0;
+  }
+
+  .dropdown-content a {
+    display: block;
+    padding: 8px 15px;
+    color: var(--azul);
+    text-decoration: none;
+    font-size: 14px;
+  }
+
+  .dropdown-content a:hover {
+    background-color: #f0f0f0;
+  }
+
+  /* O mini card permanece ativo quando o mouse estiver sobre o link ou sobre o card */
+  .dropdown:hover .dropdown-content {
+    display: flex;
+  }
+</style>
+
+
+  <!-- Conteúdo principal centralizado e mais alto -->
+  <div class="overlay">
+    <main>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/d/d9/Bras%C3%A3o-DASP.png" alt="Brasão da DASP">
+      <h2>Bem-vindo à Diocese Anglicana de São Paulo</h2>
+      <p>
+        A Diocese Anglicana de São Paulo faz parte da Igreja Episcopal Anglicana do Brasil,
+        em comunhão com o Arcebispo  de Cantuaria. Nossa missão é testemunhar o
+        Evangelho de Cristo em amor, serviço e justiça.
+      </p>
+      <footer>
+        ©2021-2023  DIOCESE ANGLICANA DE SÃO PAULO
+      </footer>
+    </main>
+  </div>
+
+</body>
+</html>

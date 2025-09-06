@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galeria dos Bispos</title>
+  <style>
+    :root {
+      --azul: #003366;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+      height: 100%;
+      overflow-y: auto;
+      background: url('https://static.nationalgeographicbrasil.com/files/styles/image_3200/public/skyline-sao-paulo-brazil.webp?w=1600&h=900') no-repeat center center fixed;
+      background-size: cover;
+    }
+
+    /* Cabeçalho fixo */
+    header {
+      background-color: white;
+      border-bottom: 1px solid #ddd;
+      padding: 15px 40px;
+      display: flex;
+      justify-content: center;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 10;
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      gap: 25px;
+    }
+
+    nav ul li {
+      position: relative;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: var(--azul);
+      font-weight: 500;
+      font-size: 14px;
+      padding: 5px 0;
+      display: block;
+    }
+
+
+    /* Dropdown */
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: white;
+      min-width: 200px;
+      box-shadow: 0px 4px 6px rgba(0,0,0,0.1);
+      border-radius: 5px;
+      z-index: 20;
+      flex-direction: column;
+      padding: 10px 0;
+    }
+
+    .dropdown-content a {
+      display: block;
+      padding: 8px 15px;
+      color: var(--azul);
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #f0f0f0;
+    }
+
+    .dropdown:hover .dropdown-content,
+    .dropdown-content:hover {
+      display: flex;
+    }
+
+   /* Overlay */
+    .overlay {
+      background-color: rgba(255,255,255,0.85);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      padding: 120px 20px 40px;
+    }
+
+    /* Conteúdo */
+    .overlay {
+      background-color: rgba(255,255,255,0.85);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      padding: 120px 20px 40px;
+    }
+
+    /* Galeria */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* largura mínima 220px, expande até 1fr */
+  gap: 20px;
+  max-width: 960px;
+  justify-content: center; /* centraliza se houver menos de 3 cards */
+}
+
+/* Limitar no máximo 3 cards por linha */
+@media (min-width: 700px) {
+  .gallery {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.bishop-card {
+  max-width: 220px; /* garante que cada card não fique maior que 220px */
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+  text-align: center;
+  padding: 12px;
+}
+
+.bishop-card img {
+  width: 100%;      /* ocupa toda a largura do card */
+  height: auto;     /* mantém proporção */
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+    .bishop-card h3 {
+      font-size: 14px;
+      color: var(--azul);
+      margin: 0;
+    }
+
+    .bishop-card p {
+      font-size: 12px;
+      color: #555;
+      margin: 4px 0 0;
+    }
+  </style>
+</head>
+<body>
+
+ <!-- Cabeçalho fixo -->
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Início</a></li>
+        <li class="dropdown">
+          <a href="#">A Diocese</a>
+          <div class="dropdown-content">
+            <a href="historia da diocese.html">História da Diocese</a>
+            <a href="mensagem do bispo.html">Mensagem do Bispo</a>
+            <a href="brasao episcopal.html">Brasão Episcopal</a>
+            <a href="galeria dos bispos.html">Galeria dos Bispos</a>
+          </div>
+        </li>
+        <li><a href="#">IEAB / Comunhão Anglicana</a></li>
+        <li><a href="#">Nossas Paróquias</a></li>
+        <li><a href="#">Sodalícios e Pastorais</a></li>
+        <li><a href="#">Links</a></li>
+        <li><a href="#">Publicações e Notícias</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="overlay">
+    <div class="gallery">
+
+      <div class="bishop-card">
+        <img src="https://static.wixstatic.com/media/aea484_2f71ff2d3722420fb8708a730c1db592~mv2.jpg" alt="Revmo. Elliot Lorenz Sorge">
+        <h3>REVMO. ELLIOT LORENZ SORGE</h3>
+        <p>1971 – 1977</p>
+      </div>
+
+      <div class="bishop-card">
+        <img src="https://static.wixstatic.com/media/aea484_ca2cd4b30aaf4848ba322b227716fedf~mv2.png" alt="Revmo. Sumio Takatsu">
+        <h3>REVMO. SUMIO TAKATSU</h3>
+        <p>1977 – 1989</p>
+      </div>
+
+      <div class="bishop-card">
+        <img src="https://static.wixstatic.com/media/aea484_70c6ec8041e7409c8eb26b1f488256e9~mv2.png" alt="Revmo. Glauco Soares de Lima">
+        <h3>REVMO. GLAUCO SOARES DE LIMA</h3>
+        <p>1990 – 2002</p>
+      </div>
+
+      <div class="bishop-card">
+        <img src="https://static.wixstatic.com/media/aea484_9e0576039ca347068920849b5ed322e4~mv2.jpg" alt="Revmo. Hiroshi Ito">
+        <h3>REVMO. HIROSHI ITO</h3>
+        <p>2002 – 2006</p>
+      </div>
+
+      <div class="bishop-card">
+        <img src="https://static.wixstatic.com/media/aea484_6eb93bcef926424ea4fdfd8c3bfbc807~mv2.jpg" alt="Revmo. Roger Douglas Bird">
+        <h3>REVMO. ROGER DOUGLAS BIRD</h3>
+        <p>2007 – 2012</p>
+      </div>
+
+      <div class="bishop-card">
+        <img src="https://static.wixstatic.com/media/aea484_afc259e5da3344af9d28a2601b6bea0c~mv2.jpg" alt="Revmo. Flavio Augusto Borges Irala">
+        <h3>REVMO. FLAVIO AUGUSTO BORGES IRALA</h3>
+        <p>2013 – 2021</p>
+      </div>
+
+      <div class="bishop-card">
+        <img src="https://static.wixstatic.com/media/d181c6_bb0d815f42aa4fe699e4839d031d2647~mv2.jpg" alt="Revmo. Francisco Cézar Fernandes Alves">
+        <h3>REVMO. FRANCISCO CÉZAR FERNANDES ALVES</h3>
+        <p>2021</p>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>

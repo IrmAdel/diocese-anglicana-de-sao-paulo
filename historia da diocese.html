@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>História da Diocese - DASP</title>
+  <style>
+    :root {
+      --azul: #1a365d;
+      --texto: #333;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+      height: 100%;
+      overflow: hidden;
+      background: url('https://static.nationalgeographicbrasil.com/files/styles/image_3200/public/skyline-sao-paulo-brazil.webp?w=1600&h=900') no-repeat center center fixed;
+      background-size: cover;
+    }
+
+    /* Cabeçalho fixo com faixa sólida */
+    header {
+      background-color: white;
+      border-bottom: 1px solid #ddd;
+      padding: 15px 40px;
+      display: flex;
+      justify-content: center;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 10;
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      gap: 25px;
+    }
+
+    nav ul li {
+      position: relative;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: var(--azul);
+      font-weight: 500;
+      font-size: 14px;
+      padding: 5px 0;
+      display: block;
+    }
+
+    /* Dropdown menu */
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: white;
+      min-width: 200px;
+      box-shadow: 0px 4px 6px rgba(0,0,0,0.1);
+      border-radius: 5px;
+      z-index: 20;
+      flex-direction: column;
+      padding: 10px 0;
+    }
+
+    .dropdown-content a {
+      display: block;
+      padding: 8px 15px;
+      color: var(--azul);
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #f0f0f0;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: flex;
+    }
+
+    /* Overlay para card centralizado */
+    .overlay {
+      background-color: rgba(255,255,255,0.85);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 100px 20px 40px;
+    }
+
+    /* Card */
+    .card {
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+      display: flex;
+      flex-direction: row;
+      max-width: 900px;
+      width: 100%;
+      padding: 30px;
+      gap: 20px;
+      align-items: flex-start;
+    }
+
+    .card img {
+      height: 200px;
+      width: auto;
+      flex-shrink: 0;
+    }
+
+    .card-text {
+      text-align: justify;
+      color: #555;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 768px) {
+      .card {
+        flex-direction: column;
+        align-items: center;
+      }
+      .card img {
+        height: 150px;
+      }
+      .card-text {
+        text-align: justify;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Cabeçalho fixo -->
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Início</a></li>
+
+        <li class="dropdown">
+          <a href="#">A Diocese</a>
+          <div class="dropdown-content">
+            <a href="historia da diocese.html">História da Diocese</a>
+            <a href="mensagem do bispo.html">Mensagem do Bispo</a>
+            <a href="brasao episcopal.html">Brasão Episcopal</a>
+            <a href="galeria dos bispos.html">Galeria dos Bispos</a>
+          </div>
+        </li>
+
+        <li><a href="#">IEAB / Comunhão Anglicana</a></li>
+        <li><a href="#">Nossas Paróquias</a></li>
+        <li><a href="#">Sodalícios e Pastorais</a></li>
+        <li><a href="#">Links</a></li>
+        <li><a href="#">Publicações e Notícias</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Conteúdo principal centralizado -->
+<div class="overlay">
+  <div class="card">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/d/d9/Bras%C3%A3o-DASP.png" alt="Brasão da DASP">
+    <div class="card-text">
+      <p>
+        A Diocese Anglicana de São Paulo (DASP) foi criada em 1969, com o nome de Diocese Sul Central, com sede na Capital, mas só foi efetivamente instalada no ano seguinte, em outubro de 1970, quando elegeu seu primeiro bispo, o bispo Elliot Lorenz Sorge, natural dos EUA. Depois do bispo Sorge, a DASP teve mais cinco bispos: Sumio Takatsu, natural de Sapporo (Japão), Glauco Soares de Lima (à época, também Bispo Primaz da IEAB), natural de Pelotas, RS, Hiroshi Ito, natural de Nara (Japão) e Roger Douglas Bird, natural de São Paulo, SP. Bispo Flávio Augusto Borges Irala, natural de Bagé, RS, sagrado em 13 de setembro de 2013, atuou como bispo diocesano até 2021. Em 2019 a DASP elegeu o Reverendo Cézar Fernandes Alves, como Bispo Coadjutor, e sagrado bispo em 25 de janeiro de 2020. O Bispo Cézar foi instalado Bispo Diocesano da DASP em 31 de outubro de 2021.
+      </p>
+      <p>
+        A DASP é parte da Igreja Episcopal Anglicana do Brasil (IEAB), que é a 19ª Província da Comunhão Anglicana e membro-fundadora do Conselho Nacional de Igrejas Cristãs. A DASP abrange toda a região geográfica do Estado de São Paulo e é formada de 15 paróquias e serviços de capelania.
+      </p>
+    </div>
+  </div>
+</div>
+
+<style>
+.card {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  display: flex;
+  flex-direction: row;
+  max-width: 900px;
+  width: 100%;
+  padding: 30px;
+  gap: 20px;
+  align-items: center; /* Alinha logo verticalmente ao meio do texto */
+}
+
+.card img {
+  height: 200px;
+  width: auto;
+  flex-shrink: 0;
+}
+</style>
+
+
+</body>
+</html>

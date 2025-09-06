@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brasão Episcopal - DASP</title>
+  <style>
+    :root {
+      --azul: #1a365d;
+      --texto: #333;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+      height: 100%;
+      overflow-y: auto;
+      background: url('https://static.nationalgeographicbrasil.com/files/styles/image_3200/public/skyline-sao-paulo-brazil.webp?w=1600&h=900') no-repeat center center fixed;
+      background-size: cover;
+    }
+
+    /* Cabeçalho fixo */
+    header {
+      background-color: white;
+      border-bottom: 1px solid #ddd;
+      padding: 15px 40px;
+      display: flex;
+      justify-content: center;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 10;
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      gap: 25px;
+    }
+
+    nav ul li {
+      position: relative;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: var(--azul);
+      font-weight: 500;
+      font-size: 14px;
+      padding: 5px 0;
+      display: block;
+    }
+
+    /* Dropdown */
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: white;
+      min-width: 200px;
+      box-shadow: 0px 4px 6px rgba(0,0,0,0.1);
+      border-radius: 5px;
+      z-index: 20;
+      flex-direction: column;
+      padding: 10px 0;
+    }
+
+    .dropdown-content a {
+      display: block;
+      padding: 8px 15px;
+      color: var(--azul);
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #f0f0f0;
+    }
+
+    .dropdown:hover .dropdown-content,
+    .dropdown-content:hover {
+      display: flex;
+    }
+
+    /* Overlay */
+    .overlay {
+      background-color: rgba(255,255,255,0.85);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      padding: 120px 20px 40px;
+    }
+
+    /* Card */
+    .card {
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+      max-width: 900px;
+      width: 100%;
+      padding: 30px;
+      text-align: center;
+    }
+
+    .card img {
+      max-width: 350px; /* tamanho grande */
+      width: 100%;
+      height: auto;
+      margin-bottom: 25px;
+    }
+
+    .card-text {
+      text-align: justify;
+      color: #555;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    .card-text strong {
+      font-weight: bold;
+    }
+
+    .card-text em {
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Cabeçalho fixo -->
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Início</a></li>
+        <li class="dropdown">
+          <a href="#">A Diocese</a>
+          <div class="dropdown-content">
+            <a href="historia da diocese.html">História da Diocese</a>
+            <a href="mensagem do bispo.html">Mensagem do Bispo</a>
+            <a href="brasao episcopal.html">Brasão Episcopal</a>
+            <a href="galeria dos bispos.html">Galeria dos Bispos</a>
+          </div>
+        </li>
+        <li><a href="#">IEAB / Comunhão Anglicana</a></li>
+        <li><a href="#">Nossas Paróquias</a></li>
+        <li><a href="#">Sodalícios e Pastorais</a></li>
+        <li><a href="#">Links</a></li>
+        <li><a href="#">Publicações e Notícias</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Conteúdo -->
+  <div class="overlay">
+    <div class="card">
+      <!-- Brasão dentro do card -->
+      <img src="https://media.discordapp.net/attachments/1385310735961292894/1413718670106034300/COM_TODO_O_CORACAO_AQUI_ESTOU_EM_TUAS_MAOS_SENHOR_20250905_235254_0000.png?ex=68bcf39c&is=68bba21c&hm=1f0ccd8f836a3306f37dda4a13f5bffae5ce82187b96b66b19dfcdb35609025f&=&format=webp&quality=lossless&width=360&height=349" alt="Brasão Episcopal">
+      
+      <!-- Texto -->
+      <div class="card-text">
+        <p>O brasão episcopal do reverendíssimo bispo Francisco Cézar Fernandes Alves é composto de vários símbolos que sinalizam uma proposta de vida pastoral para o seu ministério episcopal, como discípulo de Jesus Cristo e pastor da Igreja Una, Santa, Católica e Apostólica de Cristo. No centro do brasão encontra-se a Cruz vermelha de São Jorge, padroeiro da Inglaterra, lembrando nossas raízes anglicanas — na histórica Carta Magna da Inglaterra de 1215 já se lia a expressão <em>Ecclesia Anglicana</em>.</p>
+
+        <p>No canto superior esquerdo encontram-se Cinco Estrelas Acesas, que representam o Cruzeiro do Sul, “Crux”, recordando que foi no Sul do Brasil que os missionários e missionárias da Igreja Episcopal iniciaram o trabalho de evangelização em terras brasileiras. Esses símbolos retratam a pertença do bispo Cézar à IEAB e, consequentemente, à Comunhão Anglicana.</p>
+
+        <p>No canto superior direito localiza-se uma Flor de Lis, um dos mais populares símbolos da Bem-Aventurada Virgem Maria, mãe de Nosso Senhor Jesus Cristo. Já no canto inferior esquerdo há uma Flor de Lírio, símbolo de São José, padroeiro do Ceará; o bispo Cézar é cearense, natural de Quixeramobim, onde recebeu o Sacramento do Santo Batismo aos 7 de dezembro de 1968. Com esses dois singelos símbolos, ele quer sinalizar a importância de suas raízes: familiar, religiosa e cultural; e é seu desejo, nesse momento significativo de sua vida, honrar suas origens e seus ancestrais.</p>
+
+        <p>No canto inferior direito do brasão há a imagem de um Coração, que representa a oração e o desejo do bispo de ser um bom pastor conforme o coração de Deus: compassivo, misericordioso e amoroso para com todas as pessoas clérigas e leigas de sua Diocese. Na mesma direção, aponta o Lema Episcopal: <strong><em>“Com todo o coração, aqui estou, em tuas mãos, Senhor!”, inspirado em Hebreus 10,7 e na Palavra de Vida que recebeu da Serva de Deus Chiara Lubich: “É de todo nosso coração que nós vos seguimos agora, que nós vos reverenciamos, que buscamos vossa face” (Daniel 3,41).</em></strong></p>
+
+        <p>O brasão em formato circular traz a representação de uma Pia Batismal Octogonal, que remete ao oitavo dia, o dia da ressurreição de Cristo — a Páscoa; e o Sacramento da vida nova em Cristo, o Santo Batismo, que nos incorpora definitivamente no Corpo Místico de Cristo — a Igreja, Una, Santa, Católica e Apostólica; e a importância de o bispo, enquanto Guardião da Fé, com as pessoas clérigas e leigas, viver a Aliança Batismal, trabalhar pela unidade da Igreja, buscando a paz e a reconciliação em obediência ao Evangelho de Jesus Cristo, deixando-se conduzir pela Divina Ruah, ventania impetuosa e criativa. “Vem Espírito Santo de amor! Vem a nós, traz a igreja um novo vigor!”</p>
+
+        <p>Já o círculo externo do brasão representa primeiramente a Khupá, a casa de Abraão e Sara, nossos ancestrais na fé. Aberta por todos os lados, a Khupá representa a hospitalidade incondicional e o desejo do bispo Cézar de exercer um episcopado marcado pela reconciliação e plena inclusão de todas as pessoas na vida da Igreja, uma inclusão radical que expressa a ampla catolicidade da Igreja de Cristo. A imagem esférica do brasão também aponta para o nosso amado planeta Terra e o compromisso da Comunhão Anglicana em trabalhar para “salvaguardar a integridade da Criação, sustentar e renovar a vida da terra”.</p>
+
+        <p>Ao redor do brasão, na parte superior, estão os símbolos tradicionais do Ministério Episcopal na Santa Igreja Católica de Cristo: a Mitra, o Báculo e a Cruz, que evidenciam o Episcopado Histórico, conforme o Quadrilátero de Lambeth, e manifestam o múnus do bispo, Pastor da Diocese, Guardião da Fé, Pai em Deus, chamado para preservar a unidade e a disciplina da Igreja, e trabalhar dia e noite no ministério da reconciliação em conformidade com o Evangelho, o Rito de Ordenação e Sagração Episcopal do Livro de Oração Comum e os Cânones da Igreja.</p>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
