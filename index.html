@@ -120,18 +120,52 @@
   }
 }
 
+      /* Menu toggle - inicialmente escondido no desktop */
+.menu-toggle {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: var(--azul);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  nav ul {
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+
+  nav ul li {
+    text-align: center;
+  }
+
+  .menu-toggle {
+    display: block;
+    position: absolute;
+    right: 40px;
+    top: 18px;
+  }
+
+  nav ul.active {
+    display: flex;
+  }
+}
+
     }
   </style>
 </head>
 <body>
 
   <!-- Cabeçalho fixo -->
- <header>
+<header>
   <nav>
-    <ul>
+    <div class="menu-toggle" id="mobile-menu">
+      &#9776; <!-- esse é o ícone de "hamburguer" -->
+    </div>
+    <ul class="nav-list">
       <li><a href="index.html">Início</a></li>
-
-      <!-- Dropdown -->
       <li class="dropdown">
         <a href="#">A Diocese</a>
         <div class="dropdown-content">
@@ -141,8 +175,7 @@
           <a href="galeria dos bispos.html">Galeria dos Bispos</a>
         </div>
       </li>
-
-      <li><a href="IEAB e Comunhao Anglicana.html">IEAB / Comunhão Anglicana</a></li>
+      <li><a href="ieab comunhao anglicana.html">IEAB / Comunhão Anglicana</a></li>
       <li><a href="#">Nossas Paróquias</a></li>
       <li><a href="#">Sodalícios e Pastorais</a></li>
       <li><a href="#">Links</a></li>
@@ -209,6 +242,14 @@
   }
 </style>
 
+  <script>
+  const mobileMenu = document.getElementById("mobile-menu");
+  const navList = document.querySelector(".nav-list");
+
+  mobileMenu.addEventListener("click", () => {
+    navList.classList.toggle("active");
+  });
+</script>
 
   <!-- Conteúdo principal centralizado e mais alto -->
   <div class="overlay">
@@ -228,5 +269,6 @@
 
 </body>
 </html>
+
 
 
