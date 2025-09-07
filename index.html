@@ -156,6 +156,14 @@
     }
   </style>
 </head>
+  <script>
+  const mobileMenu = document.getElementById("mobile-menu");
+  const navList = document.querySelector(".nav-list");
+
+  mobileMenu.addEventListener("click", () => {
+    navList.classList.toggle("active");
+  });
+</script>
 <body>
 
   <!-- Cabeçalho fixo -->
@@ -242,15 +250,6 @@
   }
 </style>
 
-  <script>
-  const mobileMenu = document.getElementById("mobile-menu");
-  const navList = document.querySelector(".nav-list");
-
-  mobileMenu.addEventListener("click", () => {
-    navList.classList.toggle("active");
-  });
-</script>
-
   <!-- Conteúdo principal centralizado e mais alto -->
   <div class="overlay">
     <main>
@@ -269,6 +268,7 @@
 
 </body>
 </html>
+
 
 
 
