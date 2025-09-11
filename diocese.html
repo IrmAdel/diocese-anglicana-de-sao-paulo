@@ -375,12 +375,6 @@
                             currentIndex = 0;
                             updateCarousel();
                             
-                            // Auto-advance every 5 seconds
-                            setInterval(() => {
-                                currentIndex = (currentIndex + 1) % totalSlides;
-                                updateCarousel();
-                            }, 5000);
-                            
                             feather.replace();
                         });
                     </script>
@@ -470,7 +464,6 @@
             feather.replace();
         }
 
-
         // Initialize AOS and Feather Icons
         document.addEventListener('DOMContentLoaded', function() {
             AOS.init({
@@ -530,11 +523,6 @@
             updateCarousel();
         });
         
-        // Auto-advance every 5 seconds
-        setInterval(() => {
-            currentIndex = (currentIndex + 1) % totalSlides;
-            updateCarousel();
-        }, 5000);
     </script>
 </body>
 </html>
