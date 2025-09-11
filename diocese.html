@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Diocese - Diocese Anglicana de São Paulo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <style>
+        .hero-background {
+            background-image: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url('http://static.photos/cityscape/1200x630/1');
+            background-size: cover;
+            background-position: center;
+            filter: blur(2px);
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: -1;
+        }
+        .content-wrapper {
+            position: relative;
+            z-index: 1;
+        }
+        .nav-link:hover {
+            color: #555;
+            transition: color 0.3s ease;
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-900 font-sans">
+    <!-- Hero Background -->
+    <div class="hero-background"></div>
+    
+    <!-- Content Wrapper -->
+    <div class="content-wrapper min-h-screen flex flex-col">
+        <!-- Header -->
+        <header class="bg-white bg-opacity-90 shadow-sm">
+            <div class="container mx-auto px-4 py-4">
+                <div class="flex justify-between items-center">
+                    <!-- Logo -->
+                    <div class="flex items-center">
+                        <i data-feather="cross" class="text-gray-700 mr-2"></i>
+                    </div>
+                    
+                    <!-- Desktop Navigation -->
+                    <nav class="hidden md:flex justify-center w-full space-x-8">
+                        <a href="index.html" class="nav-link font-medium">Início</a>
+                        <div class="relative group">
+                            <button class="nav-link font-medium text-gray-700 border-b-2 border-gray-700 flex items-center cursor-pointer focus:outline-none" onclick="toggleDioceseSubmenuDesktop(event)">
+                                A Diocese
+                            </button>
+                            <div class="absolute left-1/2 transform -translate-x-1/2 mt-2 w-48 bg-white rounded-md shadow-lg z-10 hidden" id="diocese-submenu-desktop">
+                                <div class="py-1">
+                                    <a href="#historia" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">História da Diocese</a>
+                                    <a href="#mensagem-bispo" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Mensagem do Bispo</a>
+                                    <a href="#brasao" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Brasão Episcopal</a>
+                                    <a href="#galeria-bispos" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Galeria dos Bispos</a>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="comunhao.html" class="nav-link font-medium">IEAB / Comunhão Anglicana</a>
+                        <a href="paroquias.html" class="nav-link font-medium">Nossas Paróquias</a>
+                        <a href="sodalicios.html" class="nav-link font-medium">Sodalícios e Pastorais</a>
+                        <a href="links.html" class="nav-link font-medium">Links</a>
+                        <a href="noticias.html" class="nav-link font-medium">Publicações e Notícias</a>
+                    </nav>
+                    
+                    <!-- Mobile Menu Button -->
+                    <button class="md:hidden focus:outline-none" id="menu-toggle">
+                        <i data-feather="menu" class="text-gray-700"></i>
+                    </button>
+                </div>
+                
+                <!-- Mobile Navigation -->
+                <div class="md:hidden hidden mt-4" id="mobile-menu">
+                    <div class="flex flex-col items-center space-y-3">
+                        <a href="index.html" class="nav-link font-medium">Início</a>
+                        <div class="relative w-full">
+                            <button onclick="toggleDioceseSubmenu()" class="nav-link font-medium text-gray-700 flex items-center justify-center w-full">
+                                A Diocese
+                                <i data-feather="chevron-down" class="w-4 h-4 ml-1 opacity-0" id="diocese-chevron"></i>
+                            </button>
+                            <div class="hidden mt-2 w-full" id="diocese-submenu">
+                                <div class="flex flex-col items-center space-y-2 pl-4">
+                                    <a href="#historia" class="nav-link font-medium text-sm text-gray-700">História da Diocese</a>
+                                    <a href="#mensagem-bispo" class="nav-link font-medium text-sm text-gray-700">Mensagem do Bispo</a>
+                                    <a href="#brasao" class="nav-link font-medium text-sm text-gray-700">Brasão Episcopal</a>
+                                    <a href="#galeria-bispos" class="nav-link font-medium text-sm text-gray-700">Galeria dos Bispos</a>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="comunhao.html" class="nav-link font-medium">IEAB / Comunhão Anglicana</a>
+                        <a href="paroquias.html" class="nav-link font-medium">Nossas Paróquias</a>
+                        <a href="sodalicios.html" class="nav-link font-medium">Sodalícios e Pastorais</a>
+                        <a href="links.html" class="nav-link font-medium">Links</a>
+                        <a href="noticias.html" class="nav-link font-medium">Publicações e Notícias</a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="flex-grow container mx-auto px-4 py-8 flex flex-col items-center">
+            <section class="py-8 w-full">
+                <div class="flex justify-center mb-6" data-aos="fade-up">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/d/d9/Bras%C3%A3o-DASP.png" alt="Brasão Diocese Anglicana de São Paulo" class="h-48">
+                </div>
+                <h1 class="text-4xl font-bold mb-6 text-center" data-aos="fade-up">A Diocese Anglicana de São Paulo</h1>
+                
+                
+                <div class="max-w-4xl mx-auto">
+                    <div id="historia" class="bg-white bg-opacity-90 p-6 rounded-lg shadow-sm mb-8" data-aos="fade-up">
+                        <h2 class="text-2xl font-semibold mb-4">História da Diocese</h2>
+                        <p class="text-gray-700 mb-4">
+                            A Diocese Anglicana de São Paulo (DASP) foi criada em 1969, com o nome de Diocese Sul Central, com sede na Capital, mas só foi efetivamente instalada no ano seguinte, em outubro de 1970, quando elegeu seu primeiro bispo, o bispo Elliot Lorenz Sorge, natural dos EUA. Depois do bispo Sorge, a DASP teve mais cinco bispos: Sumio Takatsu, natural de Sapporo (Japão), Glauco Soares de Lima (à época, também Bispo Primaz da IEAB), natural de Pelotas, RS, Hiroshi Ito, natural de Nara (Japão) e Roger Douglas Bird, natural de São Paulo, SP. Bispo Flávio Augusto Borges Irala, natural de Bagé, RS, sagrado em 13 de setembro de 2013, atuou como bispo diocesano até 2021. Em 2019 a DASP elegeu o Reverendo Cézar Fernandes Alves, como Bispo Coadjutor, e sagrado bispo em 25 de janeiro de 2020. O Bispo Cézar foi instalado Bispo Diocesano da DASP em 31 de outubro de 2021.
+                        </p>
+                        <p class="text-gray-700">
+                            A DASP é parte da Igreja Episcopal Anglicana do Brasil (IEAB), que é a 19ª Província da Comunhão Anglicana e membro-fundadora do Conselho Nacional de Igrejas Cristãs. A DASP abrange toda a região geográfica do Estado de São Paulo e é formada de 15 paróquias e serviços de capelania.
+                        </p>
+                    </div>
+                    
+                    <div id="mensagem-bispo" class="bg-white bg-opacity-90 p-6 rounded-lg shadow-sm mb-8" data-aos="fade-up">
+                        <h2 class="text-2xl font-semibold mb-4">Mensagem do Bispo</h2>
+                        <div class="text-justify space-y-4">
+                            <p class="text-gray-700">
+                                Prezados(a) visitantes, paz e bem!
+                            </p>
+
+                            <p class="text-gray-700">
+                                Com grata satisfação damos as Boas-vindas à página da Diocese Anglicana de São Paulo (DASP). Fico muito feliz que você esteja visitando digitalmente a nossa Diocese.
+                            </p>
+
+                            <p class="text-gray-700">
+                                Aqui, você encontrará informações básicas sobre nossa Diocese e links importantes da Igreja Episcopal Anglicana do Brasil (IEAB) e da Comunhão Anglicana. Criada pelo Sínodo Geral da IEAB em 1969, a Diocese Anglicana de São Paulo é uma diocese muito jovem. Somos uma das nove dioceses que constituem a Igreja Episcopal Anglicana do Brasil, – 19° Província da Comunhão Anglicana, em plena e permanente Comunhão com a Sé histórica de Cantuária.
+                            </p>
+
+                            <p class="text-gray-700">
+                                Somos uma Igreja Católica, que recebeu as influências benéficas da Reforma do século XVI; tornando-se ao mesmo tempo, católica reformada, e aberta a todas as pessoas. Nas palavras do Arcebispo Michael Ramsey: “A Comunhão Anglicana é apenas uma parte da Igreja Católica (...) simplesmente a fé primitiva, católica e apostólica - incorporada nas Escrituras, nos credos, nos sacramentos e no ministério apostólico de bispos, sacerdotes e diáconos. Um ministério católico - um vínculo de continuidade e unidade ao longo dos tempos e em todo o mundo (...), e servindo a Cristo lealmente nesta Comunhão onde Ele providencialmente nos colocou, nos aproximamos de ambos os lados na busca da unidade, esforçando-nos para construir a unidade da única Igreja Católica.“
+                            </p>
+
+                            <p class="text-gray-700">
+                                Nos diversos itens do menu deste site, você encontrará mais informações, através das quais poderá conhecer nossas doutrinas e elementos do Ethos Anglicano. Estamos no Brasil, para servir e proclamar as Boas novas do Evangelho de nosso Senhor Jesus Cristo.
+                            </p>
+
+                            <p class="text-gray-700">
+                                Mais uma vez, seja muito bem-vinda(o) entre nós.
+                            </p>
+
+                            <p class="text-gray-700 font-medium mt-4">
+                                + Cézar Fernandes Alves
+                            </p>
+                        </div>
+                    </div>
+
+                    <div id="brasao" class="bg-white bg-opacity-90 p-6 rounded-lg shadow-sm mb-8" data-aos="fade-up">
+                        <h2 class="text-2xl font-semibold mb-4">Brasão Episcopal</h2>
+                        <div class="flex justify-center">
+                            <img src="https://media.discordapp.net/attachments/1385310735961292894/1413718670106034300/COM_TODO_O_CORACAO_AQUI_ESTOU_EM_TUAS_MAOS_SENHOR_20250905_235254_0000.png?ex=68c2e25c&is=68c190dc&hm=089657b0d0ab0ce513819764f81c1e455a83dc5069d29524a0eb8721b4ff1438&=&format=webp&quality=lossless&width=300&height=291" alt="Brasão Episcopal" class="h-64">
+                        </div>
+                        <div class="text-justify space-y-4 mt-4">
+                            <p class="text-gray-700">
+                                O brasão episcopal do reverendíssimo bispo Francisco Cézar Fernandes Alves é composto de vários símbolos que sinalizam uma proposta de vida pastoral para o seu ministério episcopal, como discípulo de Jesus Cristo e pastor da Igreja Una, Santa, Católica e Apostólica de Cristo. No centro do brasão encontra-se a Cruz vermelha de São Jorge, padroeiro da Inglaterra, lembrando nossas raízes anglicanas — na histórica Carta Magna da Inglaterra de 1215 já se lia a expressão Ecclesia Anglicana.
+                            </p>
+
+                            <p class="text-gray-700">
+                                No canto superior esquerdo encontram-se Cinco Estrelas Acesas, que representam o Cruzeiro do Sul, "Crux", recordando que foi no Sul do Brasil que os missionários e missionárias da Igreja Episcopal iniciaram o trabalho de evangelização em terras brasileiras. Esses símbolos retratam a pertença do bispo Cézar à IEAB e, consequentemente, à Comunhão Anglicana.
+                            </p>
+
+                            <p class="text-gray-700">
+                                No canto superior direito localiza-se uma Flor de Lis, um dos mais populares símbolos da Bem-Aventurada Virgem Maria, mãe de Nosso Senhor Jesus Cristo. Já no canto inferior esquerdo há uma Flor de Lírio, símbolo de São José, padroeiro do Ceará; o bispo Cézar é cearense, natural de Quixeramobim, onde recebeu o Sacramento do Santo Batismo aos 7 de dezembro de 1968. Com esses dois singelos símbolos, ele quer sinalizar a importância de suas raízes: familiar, religiosa e cultural; e é seu desejo, nesse momento significativo de sua vida, honrar suas origens e seus ancestrais.
+                            </p>
+
+                            <p class="text-gray-700">
+                                No canto inferior direito do brasão há a imagem de um Coração, que representa a oração e o desejo do bispo de ser um bom pastor conforme o coração de Deus: compassivo, misericordioso e amoroso para com todas as pessoas clérigas e leigas de sua Diocese. Na mesma direção, aponta o Lema Episcopal: "Com todo o coração, aqui estou, em tuas mãos, Senhor!", inspirado em Hebreus 10,7 e na Palavra de Vida que recebeu da Serva de Deus Chiara Lubich: "É de todo nosso coração que nós vos seguimos agora, que nós vos reverenciamos, que buscamos vossa face" (Daniel 3,41).
+                            </p>
+
+                            <p class="text-gray-700">
+                                O brasão em formato circular traz a representação de uma Pia Batismal Octogonal, que remete ao oitavo dia, o dia da ressurreição de Cristo — a Páscoa; e o Sacramento da vida nova em Cristo, o Santo Batismo, que nos incorpora definitivamente no Corpo Místico de Cristo — a Igreja, Una, Santa, Católica e Apostólica; e a importância de o bispo, enquanto Guardião da Fé, com as pessoas clérigas e leigas, viver a Aliança Batismal, trabalhar pela unidade da Igreja, buscando a paz e a reconciliação em obediência ao Evangelho de Jesus Cristo, deixando-se conduzir pela Divina Ruah, ventania impetuosa e criativa. "Vem Espírito Santo de amor! Vem a nós, traz a igreja um novo vigor!"
+                            </p>
+
+                            <p class="text-gray-700">
+                                Já o círculo externo do brasão representa primeiramente a Khupá, a casa de Abraão e Sara, nossos ancestrais na fé. Aberta por todos os lados, a Khupá representa a hospitalidade incondicional e o desejo do bispo Cézar de exercer um episcopado marcado pela reconciliação e plena inclusão de todas as pessoas na vida da Igreja, uma inclusão radical que expressa a ampla catolicidade da Igreja de Cristo. A imagem esférica do brasão também aponta para o nosso amado planeta Terra e o compromisso da Comunhão Anglicana em trabalhar para "salvaguardar a integridade da Criação, sustentar e renovar a vida da terra".
+                            </p>
+
+                            <p class="text-gray-700">
+                                Ao redor do brasão, na parte superior, estão os símbolos tradicionais do Ministério Episcopal na Santa Igreja Católica de Cristo: a Mitra, o Báculo e a Cruz, que evidenciam o Episcopado Histórico, conforme o Quadrilátero de Lambeth, e manifestam o múnus do bispo, Pastor da Diocese, Guardião da Fé, Pai em Deus, chamado para preservar a unidade e a disciplina da Igreja, e trabalhar dia e noite no ministério da reconciliação em conformidade com o Evangelho, o Rito de Ordenação e Sagração Episcopal do Livro de Oração Comum e os Cânones da Igreja.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-8 mb-8">
+                        <div class="bg-white bg-opacity-90 p-6 rounded-lg shadow-sm" data-aos="fade-up">
+                            <h2 class="text-2xl font-semibold mb-4">Nossa Missão</h2>
+                            <p class="text-gray-700 mb-4">
+                                Como parte da Comunhão Anglicana, nossa missão é viver e proclamar o Evangelho de Jesus Cristo, servindo a todos com amor e compaixão.
+                            </p>
+                            <ul class="list-disc pl-5 text-gray-700">
+                                <li class="mb-2">Celebrar a fé em comunidade</li>
+                                <li class="mb-2">Servir aos necessitados</li>
+                                <li class="mb-2">Promover a justiça social</li>
+                                <li class="mb-2">Cultivar a espiritualidade</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-white bg-opacity-90 p-6 rounded-lg shadow-sm" data-aos="fade-up" data-aos-delay="100">
+                            <h2 class="text-2xl font-semibold mb-4">Nossa Estrutura</h2>
+                            <p class="text-gray-700 mb-4">
+                                A Diocese é composta por diversas paróquias e missões distribuídas pela região metropolitana de São Paulo, cada uma com suas particularidades e ministérios.
+                            </p>
+                            <div class="flex items-center mt-4">
+                                <i data-feather="users" class="mr-2"></i>
+                                <span class="text-gray-700">Bispo Diocesano: Dom [Nome]</span>
+                            </div>
+                            <div class="flex items-center mt-2">
+                                <i data-feather="map-pin" class="mr-2"></i>
+                                <span class="text-gray-700">X paróquias e comunidades</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div id="galeria-bispos" class="bg-white bg-opacity-90 p-6 rounded-lg shadow-sm" data-aos="fade-up">
+                        <h2 class="text-2xl font-semibold mb-6 text-center">Galeria dos Bispos</h2>
+                        <div class="relative max-w-3xl mx-auto">
+                            <div class="carousel-container overflow-hidden relative">
+                                <div class="carousel-track flex transition-transform duration-300 ease-in-out" id="carousel-track">
+                                    <!-- Bispo 7 (Mais recente) -->
+                                    <div class="carousel-slide min-w-full px-4">
+                                        <div class="flex flex-col items-center">
+                                            <div class="h-48 w-48 mx-auto bg-gray-200 rounded-full mb-4"></div>
+                                            <p class="font-medium text-lg">Dom Cézar Fernandes Alves</p>
+                                            <p class="text-gray-600">2021-Presente</p>
+                                        </div>
+                                    </div>
+                                    <!-- Bispo 6 -->
+                                    <div class="carousel-slide min-w-full px-4">
+                                        <div class="flex flex-col items-center">
+                                            <div class="h-48 w-48 mx-auto bg-gray-200 rounded-full mb-4"></div>
+                                            <p class="font-medium text-lg">Dom Flávio Irala</p>
+                                            <p class="text-gray-600">2013-2021</p>
+                                        </div>
+                                    </div>
+                                    <!-- Bispo 5 -->
+                                    <div class="carousel-slide min-w-full px-4">
+                                        <div class="flex flex-col items-center">
+                                            <div class="h-48 w-48 mx-auto bg-gray-200 rounded-full mb-4"></div>
+                                            <p class="font-medium text-lg">Dom Roger Douglas Bird</p>
+                                            <p class="text-gray-600">2003-2013</p>
+                                        </div>
+                                    </div>
+                                    <!-- Bispo 4 -->
+                                    <div class="carousel-slide min-w-full px-4">
+                                        <div class="flex flex-col items-center">
+                                            <div class="h-48 w-48 mx-auto bg-gray-200 rounded-full mb-4"></div>
+                                            <p class="font-medium text-lg">Dom Hiroshi Ito</p>
+                                            <p class="text-gray-600">1991-2003</p>
+                                        </div>
+                                    </div>
+                                    <!-- Bispo 3 -->
+                                    <div class="carousel-slide min-w-full px-4">
+                                        <div class="flex flex-col items-center">
+                                            <div class="h-48 w-48 mx-auto bg-gray-200 rounded-full mb-4"></div>
+                                            <p class="font-medium text-lg">Dom Glauco Soares de Lima</p>
+                                            <p class="text-gray-600">1984-1991</p>
+                                        </div>
+                                    </div>
+                                    <!-- Bispo 2 -->
+                                    <div class="carousel-slide min-w-full px-4">
+                                        <div class="flex flex-col items-center">
+                                            <div class="h-48 w-48 mx-auto bg-gray-200 rounded-full mb-4"></div>
+                                            <p class="font-medium text-lg">Dom Sumio Takatsu</p>
+                                            <p class="text-gray-600">1975-1984</p>
+                                        </div>
+                                    </div>
+                                    <!-- Bispo 1 -->
+                                    <div class="carousel-slide min-w-full px-4">
+                                        <div class="flex flex-col items-center">
+                                            <div class="h-48 w-48 mx-auto bg-gray-200 rounded-full mb-4"></div>
+                                            <p class="font-medium text-lg">Dom Elliot Lorenz Sorge</p>
+                                            <p class="text-gray-600">1970-1975</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="carousel-button absolute top-1/2 -translate-y-1/2 left-0 bg-white p-2 rounded-full shadow-md" id="prev-button">
+                                <i data-feather="chevron-left"></i>
+                            </button>
+                            <button class="carousel-button absolute top-1/2 -translate-y-1/2 right-0 bg-white p-2 rounded-full shadow-md" id="next-button">
+                                <i data-feather="chevron-right"></i>
+                            </button>
+                            <div class="flex justify-center mt-6 space-x-2" id="carousel-dots">
+                                <!-- Dots will be added by JavaScript -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <style>
+                        .carousel-container {
+                            scroll-behavior: smooth;
+                        }
+                        .carousel-button {
+                            transition: all 0.3s ease;
+                        }
+                        .carousel-button:hover {
+                            transform: translateY(-50%) scale(1.1);
+                        }
+                        .carousel-dot {
+                            width: 10px;
+                            height: 10px;
+                            border-radius: 50%;
+                            background-color: #ccc;
+                            transition: all 0.3s ease;
+                        }
+                        .carousel-dot.active {
+                            background-color: #666;
+                            transform: scale(1.2);
+                        }
+                    </style>
+
+                    <script>
+                        document.addEventListener('DOMContentLoaded', function() {
+                            const track = document.getElementById('carousel-track');
+                            const dotsContainer = document.getElementById('carousel-dots');
+                            const slides = document.querySelectorAll('.carousel-slide');
+                            const prevButton = document.getElementById('prev-button');
+                            const nextButton = document.getElementById('next-button');
+                            
+                            let currentIndex = 0;
+                            const totalSlides = slides.length;
+                            
+                            // Create dots
+                            slides.forEach((_, index) => {
+                                const dot = document.createElement('div');
+                                dot.classList.add('carousel-dot');
+                                if (index === 0) dot.classList.add('active');
+                                dot.addEventListener('click', () => {
+                                    goToSlide(index);
+                                });
+                                dotsContainer.appendChild(dot);
+                            });
+                            
+                            function updateCarousel() {
+                                track.style.transform = `translateX(-${currentIndex * 100}%)`;
+                                
+                                // Update dots
+                                document.querySelectorAll('.carousel-dot').forEach((dot, index) => {
+                                    if (index === currentIndex) {
+                                        dot.classList.add('active');
+                                    } else {
+                                        dot.classList.remove('active');
+                                    }
+                                });
+                            }
+                            
+                            function goToSlide(index) {
+                                currentIndex = index;
+                                updateCarousel();
+                            }
+                            
+                            prevButton.addEventListener('click', () => {
+                                currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+                                updateCarousel();
+                            });
+                            
+                            nextButton.addEventListener('click', () => {
+                                currentIndex = (currentIndex + 1) % totalSlides;
+                                updateCarousel();
+                            });
+                            
+                            // Start with first slide (most recent bishop)
+                            currentIndex = 0;
+                            updateCarousel();
+                            
+                            // Auto-advance every 5 seconds
+                            setInterval(() => {
+                                currentIndex = (currentIndex + 1) % totalSlides;
+                                updateCarousel();
+                            }, 5000);
+                            
+                            feather.replace();
+                        });
+                    </script>
+
+                    <div class="bg-white bg-opacity-90 p-6 rounded-lg shadow-sm mt-8" data-aos="fade-up">
+                        <h2 class="text-2xl font-semibold mb-4">Governança</h2>
+                        <p class="text-gray-700 mb-4">
+                            A Diocese é governada pelo Bispo Diocesano em conjunto com o Sínodo Diocesano, composto por clérigos e leigos eleitos por suas comunidades.
+                        </p>
+                        <p class="text-gray-700">
+                            Nossas decisões são tomadas em espírito de oração e discernimento, buscando sempre o bem comum e o crescimento do Reino de Deus.
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+                        <p>&copy; 2021-2023 DIOCESE ANGLICANA DE SÃO PAULO</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+=======
+        <!-- Footer -->
+        <footer class="bg-white bg-opacity-90 py-8 border-t">
+            <div class="container mx-auto px-4">
+                <div class="flex flex-col items-center">
+                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 w-full max-w-4xl mx-auto gap-8">
+                        <div class="text-center w-full md:w-auto md:flex-1">
+                            <h3 class="text-lg font-semibold mb-4">Centro Diocesano D. Sumio Takatsu</h3>
+                            <p class="text-gray-700">
+                                Rua Borges Lagoa, 172<br>
+                                São Paulo - SP<br>
+                                CEP: 04038-000
+                            </p>
+                        </div>
+                        <div class="text-center w-full md:w-auto md:flex-1">
+                            <h3 class="text-lg font-semibold mb-4">Contato</h3>
+                            <p class="text-gray-700">
+                                dasp.escritorio@gmail.com<br>
+                                (11) 5549-9086
+                            </p>
+                        </div>
+                        <div class="text-center w-full md:w-auto md:flex-1">
+                            <h3 class="text-lg font-semibold mb-4">Redes Sociais</h3>
+                            <div class="flex justify-center space-x-4">
+                                <a href="https://www.facebook.com/IEAB.DASP?_rdc=1&_rdr#" class="text-gray-700 hover:text-gray-900">
+                                    <i data-feather="facebook"></i>
+                                </a>
+                                <a href="https://www.instagram.com/anglicana.saopaulo?igsh=czA4NTk1YWVqdzQ5" class="text-gray-700 hover:text-gray-900">
+                                    <i data-feather="instagram"></i>
+                                </a>
+                                <a href="https://m.soundcloud.com/user-770491338" class="text-gray-700 hover:text-gray-900">
+                                    <i data-feather="activity"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-gray-600 text-center w-full">
+                        <p>&copy; 2021-2023 DIOCESE ANGLICANA DE SÃO PAULO</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+=======
+                        <p>&copy; 2021-2023 DIOCESE ANGLICANA DE SÃO PAULO</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+            feather.replace();
+        });
+
+        // Diocese submenu toggle for desktop
+        function toggleDioceseSubmenuDesktop(e) {
+            e.preventDefault();
+            const submenu = document.getElementById('diocese-submenu-desktop');
+            submenu.classList.toggle('hidden');
+            feather.replace();
+        }
+
+        // Diocese submenu toggle for mobile
+        function toggleDioceseSubmenu() {
+            const submenu = document.getElementById('diocese-submenu');
+            const chevron = document.getElementById('diocese-chevron');
+            submenu.classList.toggle('hidden');
+            if (submenu.classList.contains('hidden')) {
+                chevron.setAttribute('data-feather', 'chevron-down');
+            } else {
+                chevron.setAttribute('data-feather', 'chevron-up');
+            }
+            feather.replace();
+        }
+
+
+        // Initialize AOS and Feather Icons
+        document.addEventListener('DOMContentLoaded', function() {
+            AOS.init({
+                duration: 800,
+                easing: 'ease-in-out',
+                once: true
+            });
+            feather.replace();
+        });
+
+        // Carousel functionality
+        const track = document.getElementById('carousel-track');
+        const dotsContainer = document.getElementById('carousel-dots');
+        const slides = document.querySelectorAll('.carousel-slide');
+        const prevButton = document.getElementById('prev-button');
+        const nextButton = document.getElementById('next-button');
+        
+        let currentIndex = 0;
+        const totalSlides = slides.length;
+        
+        // Create dots
+        slides.forEach((_, index) => {
+            const dot = document.createElement('div');
+            dot.classList.add('carousel-dot');
+            if (index === 0) dot.classList.add('active');
+            dot.addEventListener('click', () => {
+                goToSlide(index);
+            });
+            dotsContainer.appendChild(dot);
+        });
+        
+        function updateCarousel() {
+            track.style.transform = `translateX(-${currentIndex * 100}%)`;
+            
+            // Update dots
+            document.querySelectorAll('.carousel-dot').forEach((dot, index) => {
+                if (index === currentIndex) {
+                    dot.classList.add('active');
+                } else {
+                    dot.classList.remove('active');
+                }
+            });
+        }
+        
+        function goToSlide(index) {
+            currentIndex = index;
+            updateCarousel();
+        }
+        
+        prevButton.addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+            updateCarousel();
+        });
+        
+        nextButton.addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % totalSlides;
+            updateCarousel();
+        });
+        
+        // Auto-advance every 5 seconds
+        setInterval(() => {
+            currentIndex = (currentIndex + 1) % totalSlides;
+            updateCarousel();
+        }, 5000);
+    </script>
+</body>
+</html>
+
+
+I've created two pages for the Diocese Anglicana de São Paulo website:
+1. index.html - The main homepage with a blurred São Paulo cityscape background with white filter, clean white theme with black text, and responsive navigation including a hamburger menu for mobile.
+2. diocese.html - The "A Diocese" page with information about the diocese's history, mission, and structure.
+
+The design follows your requirements with:
+- Clean white theme with black text
+- Blurred São Paulo cityscape background with white overlay
+- Responsive navigation with hamburger menu for mobile
+- All the requested menu items linking to their respective pages
+- Feather icons for visual elements
+- AOS for scroll animations
+- Tailwind CSS for responsive design
+
+Would you like me to create any of the other pages mentioned in the navigation?
