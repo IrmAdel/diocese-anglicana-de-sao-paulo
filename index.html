@@ -1,274 +1,205 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Diocese Anglicana de São Paulo</title>
-  <style>
-    :root {
-      --azul: #1a365d;
-      --texto: #333;
-    }
-    * {
-      box-sizing: border-box;
-    }
-    html, body {
-      margin: 0;
-      padding: 0;
-      font-family: "Segoe UI", Helvetica, Arial, sans-serif;
-      height: 100%;
-      overflow: hidden; /* desativa rolagem */
-      background: url('https://static.nationalgeographicbrasil.com/files/styles/image_3200/public/skyline-sao-paulo-brazil.webp?w=1600&h=900') no-repeat center center fixed;
-      background-size: cover;
-    }
-
-    /* Cabeçalho fixo com faixa sólida */
-    header {
-      background-color: white; /* faixa sólida */
-      border-bottom: 1px solid #ddd;
-      padding: 15px 40px;
-      display: flex;
-      justify-content: center;
-      position: fixed;
-      top: 0;
-      width: 100%;
-      z-index: 10;
-    }
-    nav ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      gap: 25px;
-    }
-    nav ul li a {
-      text-decoration: none;
-      color: var(--azul);
-      font-weight: 500;
-      font-size: 14px;
-      transition: color 0.2s ease-in-out;
-    }
-    nav ul li a:hover {
-      color: #0a58ca;
-    }
-
-    /* Overlay branco semitransparente ocupando toda a tela */
-    .overlay {
-      background-color: rgba(255,255,255,0.85);
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-start; /* alinha conteúdo ao topo */
-      padding: 60px 20px 40px; /* ajustado para subir o conteúdo */
-      text-align: center;
-    }
-
-    /* Conteúdo principal */
-    main img {
-      height: 260px; /* um pouco maior e mais destacado */
-      width: auto;
-      margin-bottom: 15px; /* mantém espaço entre logo e título */
-    }
-    main h2 {
-      font-size: 32px;
-      color: var(--azul);
-      margin-bottom: 10px; /* aproxima do parágrafo */
-    }
-    main p {
-      max-width: 650px;
-      font-size: 16px;
-      line-height: 1.6;
-      color: #555;
-      margin: 0 auto;
-    }
-
-    /* Rodapé dentro da mesma tela */
-    footer {
-      color: #555;
-      font-size: 14px;
-      margin-top: 30px;
-    }
-
-    @media (max-width: 768px) {
-      main img {
-        height: 180px;
-      }
-      main h2 {
-        font-size: 24px;
-      }
-
-    /* Para celulares (telas até 768px de largura) */
-@media (max-width: 768px) {
-  body {
-    font-size: 16px;
-  }
-  nav ul {
-    flex-direction: column;
-    gap: 10px;
-  }
-}
-
-/* Para desktops (telas acima de 1024px) */
-@media (min-width: 1024px) {
-  body {
-    font-size: 18px;
-  }
-  nav ul {
-    flex-direction: row;
-    gap: 25px;
-  }
-}
-
-      /* Menu toggle - inicialmente escondido no desktop */
-.menu-toggle {
-  display: none;
-  font-size: 24px;
-  cursor: pointer;
-  color: var(--azul);
-}
-
-/* Mobile */
-@media (max-width: 768px) {
-  nav ul {
-    display: none;
-    flex-direction: column;
-    gap: 10px;
-    width: 100%;
-  }
-
-  nav ul li {
-    text-align: center;
-  }
-
-  .menu-toggle {
-    display: block;
-    position: absolute;
-    right: 40px;
-    top: 18px;
-  }
-
-  nav ul.active {
-    display: flex;
-  }
-}
-
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diocese Anglicana de São Paulo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <style>
+        .hero-background {
+            background-image: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url('http://static.photos/cityscape/1200x630/1');
+            background-size: cover;
+            background-position: center;
+            filter: blur(2px);
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: -1;
+        }
+        .content-wrapper {
+            position: relative;
+            z-index: 1;
+        }
+        .nav-link:hover {
+            color: #555;
+            transition: color 0.3s ease;
+        }
+    </style>
 </head>
-  <script>
-  const mobileMenu = document.getElementById("mobile-menu");
-  const navList = document.querySelector(".nav-list");
+<body class="bg-white text-gray-900 font-sans">
+    <!-- Hero Background -->
+    <div class="hero-background"></div>
+    
+    <!-- Content Wrapper -->
+    <div class="content-wrapper min-h-screen flex flex-col">
+        <!-- Header -->
+        <header class="bg-white bg-opacity-90 shadow-sm">
+            <div class="container mx-auto px-4 py-4">
+                <div class="flex justify-between items-center">
+                    <!-- Logo -->
+                    <div class="flex items-center">
+                        <i data-feather="cross" class="text-gray-700 mr-2"></i>
+                    </div>
+                    
+                    <!-- Desktop Navigation -->
+                    <nav class="hidden md:flex justify-center w-full space-x-8">
+                        <a href="index.html" class="nav-link font-medium">Início</a>
+                        <div class="relative group">
+                            <button class="nav-link font-medium flex items-center cursor-pointer focus:outline-none" onclick="toggleDioceseSubmenuDesktop(event)">
+                                A Diocese
+                            </button>
+                            <div class="absolute left-1/2 transform -translate-x-1/2 mt-2 w-48 bg-white rounded-md shadow-lg z-10 hidden" id="diocese-submenu-desktop">
+                                <div class="py-1">
+                                    <a href="diocese.html#historia" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">História da Diocese</a>
+                                    <a href="diocese.html#mensagem-bispo" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Mensagem do Bispo</a>
+                                    <a href="diocese.html#brasao" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Brasão Episcopal</a>
+                                    <a href="diocese.html#galeria-bispos" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Galeria dos Bispos</a>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="comunhao.html" class="nav-link font-medium">IEAB / Comunhão Anglicana</a>
+                        <a href="paroquias.html" class="nav-link font-medium">Nossas Paróquias</a>
+                        <a href="sodalicios.html" class="nav-link font-medium">Sodalícios e Pastorais</a>
+                        <a href="links.html" class="nav-link font-medium">Links</a>
+                        <a href="noticias.html" class="nav-link font-medium">Publicações e Notícias</a>
+                    </nav>
+                    
+                    <!-- Mobile Menu Button -->
+                    <button class="md:hidden focus:outline-none" id="menu-toggle">
+                        <i data-feather="menu" class="text-gray-700"></i>
+                    </button>
+                </div>
+                
+                <!-- Mobile Navigation -->
+                <div class="md:hidden hidden mt-4" id="mobile-menu">
+                    <div class="flex flex-col items-center space-y-3">
+                        <a href="index.html" class="nav-link font-medium">Início</a>
+                        <div class="relative w-full">
+                            <button onclick="toggleDioceseSubmenu()" class="nav-link font-medium flex items-center justify-center w-full">
+                                A Diocese
+                                <i data-feather="chevron-down" class="w-4 h-4 ml-1 opacity-0" id="diocese-chevron"></i>
+                            </button>
+                            <div class="hidden mt-2 w-full" id="diocese-submenu">
+                                <div class="flex flex-col items-center space-y-2 pl-4">
+                                    <a href="diocese.html#historia" class="nav-link font-medium text-sm">História da Diocese</a>
+                                    <a href="diocese.html#mensagem-bispo" class="nav-link font-medium text-sm">Mensagem do Bispo</a>
+                                    <a href="diocese.html#brasao" class="nav-link font-medium text-sm">Brasão Episcopal</a>
+                                    <a href="diocese.html#galeria-bispos" class="nav-link font-medium text-sm">Galeria dos Bispos</a>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="comunhao.html" class="nav-link font-medium">IEAB / Comunhão Anglicana</a>
+                        <a href="paroquias.html" class="nav-link font-medium">Nossas Paróquias</a>
+                        <a href="sodalicios.html" class="nav-link font-medium">Sodalícios e Pastorais</a>
+                        <a href="links.html" class="nav-link font-medium">Links</a>
+                        <a href="noticias.html" class="nav-link font-medium">Publicações e Notícias</a>
+                    </div>
+                </div>
+            </div>
+        </header>
 
-  mobileMenu.addEventListener("click", () => {
-    navList.classList.toggle("active");
-  });
-</script>
-<body>
+        <!-- Main Content -->
+        <main class="flex-grow container mx-auto px-4 py-8 flex flex-col items-center">
+            <section class="text-center py-12 w-full">
+                <div class="flex justify-center mb-6" data-aos="fade-up">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/d/d9/Bras%C3%A3o-DASP.png" alt="Brasão Diocese Anglicana de São Paulo" class="h-48">
+                </div>
+                <h1 class="text-4xl font-bold mb-6" data-aos="fade-up">Bem-vindo à Diocese Anglicana de São Paulo</h1>
+                <p class="text-xl max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+                    A Diocese Anglicana de São Paulo faz parte da Igreja Episcopal Anglicana do Brasil, em comunhão com o Arcebispo de Cantuaria. Nossa missão é testemunhar o Evangelho de Cristo em amor, serviço e justiça
+                </p>
+            </section>
 
-  <!-- Cabeçalho fixo -->
-<header>
-  <nav>
-    <div class="menu-toggle" id="mobile-menu">
-      &#9776; <!-- esse é o ícone de "hamburguer" -->
+        </main>
+
+        <!-- Footer -->
+        <footer class="bg-white bg-opacity-90 py-8 border-t">
+            <div class="container mx-auto px-4">
+                <div class="flex flex-col items-center">
+                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 w-full max-w-4xl mx-auto gap-8">
+                        <div class="text-center w-full md:w-auto md:flex-1">
+                            <h3 class="text-lg font-semibold mb-4">Centro Diocesano D. Sumio Takatsu</h3>
+                            <p class="text-gray-700">
+                                Rua Borges Lagoa, 172<br>
+                                São Paulo - SP<br>
+                                CEP: 04038-000
+                            </p>
+                        </div>
+                        <div class="text-center w-full md:w-auto md:flex-1">
+                            <h3 class="text-lg font-semibold mb-4">Contato</h3>
+                            <p class="text-gray-700">
+                                dasp.escritorio@gmail.com<br>
+                                (11) 5549-9086
+                            </p>
+                        </div>
+                        <div class="text-center w-full md:w-auto md:flex-1">
+                            <h3 class="text-lg font-semibold mb-4">Redes Sociais</h3>
+                            <div class="flex justify-center space-x-4">
+                                <a href="https://www.facebook.com/IEAB.DASP?_rdc=1&_rdr#" class="text-gray-700 hover:text-gray-900">
+                                    <i data-feather="facebook"></i>
+                                </a>
+                                <a href="https://www.instagram.com/anglicana.saopaulo?igsh=czA4NTk1YWVqdzQ5" class="text-gray-700 hover:text-gray-900">
+                                    <i data-feather="instagram"></i>
+                                </a>
+                                <a href="https://m.soundcloud.com/user-770491338" class="text-gray-700 hover:text-gray-900">
+                                    <i data-feather="activity"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-gray-600 text-center w-full">
+                        <p>&copy; 2021-2023 DIOCESE ANGLICANA DE SÃO PAULO</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
     </div>
-    <ul class="nav-list">
-      <li><a href="index.html">Início</a></li>
-      <li class="dropdown">
-        <a href="#">A Diocese</a>
-        <div class="dropdown-content">
-          <a href="historia da diocese.html">História da Diocese</a>
-          <a href="mensagem do bispo.html">Mensagem do Bispo</a>
-          <a href="brasao episcopal.html">Brasão Episcopal</a>
-          <a href="galeria dos bispos.html">Galeria dos Bispos</a>
-        </div>
-      </li>
-      <li><a href="ieab comunhao anglicana.html">IEAB / Comunhão Anglicana</a></li>
-      <li><a href="#">Nossas Paróquias</a></li>
-      <li><a href="#">Sodalícios e Pastorais</a></li>
-      <li><a href="#">Links</a></li>
-      <li><a href="#">Publicações e Notícias</a></li>
-    </ul>
-  </nav>
-</header>
 
-<style>
-  :root {
-    --azul: #1a365d;
-  }
+    <script>
+        // Mobile menu toggle
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+            feather.replace();
+        });
 
-  nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    gap: 25px;
-  }
+        // Diocese submenu toggle for desktop
+        function toggleDioceseSubmenuDesktop(e) {
+            e.preventDefault();
+            const submenu = document.getElementById('diocese-submenu-desktop');
+            submenu.classList.toggle('hidden');
+            feather.replace();
+        }
 
-  nav ul li {
-    position: relative; /* necessário para o dropdown */
-  }
+        // Diocese submenu toggle for mobile
+        function toggleDioceseSubmenu() {
+            const submenu = document.getElementById('diocese-submenu');
+            const chevron = document.getElementById('diocese-chevron');
+            submenu.classList.toggle('hidden');
+            if (submenu.classList.contains('hidden')) {
+                chevron.setAttribute('data-feather', 'chevron-down');
+            } else {
+                chevron.setAttribute('data-feather', 'chevron-up');
+            }
+            feather.replace();
+        }
 
-  nav ul li a {
-    text-decoration: none;
-    color: var(--azul);
-    font-weight: 500;
-    font-size: 14px;
-    padding: 5px 0;
-    display: block;
-  }
 
-  .dropdown-content {
-    display: none; /* começa escondido */
-    position: absolute;
-    top: 100%; /* abaixo do link */
-    left: 0;
-    background-color: white;
-    min-width: 200px;
-    box-shadow: 0px 4px 6px rgba(0,0,0,0.1);
-    border-radius: 5px;
-    z-index: 20;
-    flex-direction: column;
-    padding: 10px 0;
-  }
-
-  .dropdown-content a {
-    display: block;
-    padding: 8px 15px;
-    color: var(--azul);
-    text-decoration: none;
-    font-size: 14px;
-  }
-
-  .dropdown-content a:hover {
-    background-color: #f0f0f0;
-  }
-
-  /* O mini card permanece ativo quando o mouse estiver sobre o link ou sobre o card */
-  .dropdown:hover .dropdown-content {
-    display: flex;
-  }
-</style>
-
-  <!-- Conteúdo principal centralizado e mais alto -->
-  <div class="overlay">
-    <main>
-      <img src="https://upload.wikimedia.org/wikipedia/commons/d/d9/Bras%C3%A3o-DASP.png" alt="Brasão da DASP">
-      <h2>Bem-vindo à Diocese Anglicana de São Paulo</h2>
-      <p>
-        A Diocese Anglicana de São Paulo faz parte da Igreja Episcopal Anglicana do Brasil,
-        em comunhão com o Arcebispo  de Cantuaria. Nossa missão é testemunhar o
-        Evangelho de Cristo em amor, serviço e justiça.
-      </p>
-      <footer>
-        ©2021-2023  DIOCESE ANGLICANA DE SÃO PAULO
-      </footer>
-    </main>
-  </div>
-
+        // Initialize AOS and Feather Icons
+        document.addEventListener('DOMContentLoaded', function() {
+            AOS.init({
+                duration: 800,
+                easing: 'ease-in-out',
+                once: true
+            });
+            feather.replace();
+        });
+    </script>
 </body>
 </html>
-
-
-
-
